@@ -1,0 +1,18 @@
+
+#Preprocessing Audio (VAD + Denoiser)
+python preprocessing_audio.py --input_path=/home/sysadm/Ilham/GST-TTS/STT-Dataset/int035 --output_path=/home/sysadm/Ilham/GST-TTS/STT-Dataset/dataset_clean/int035 --active_denoiser=True
+
+#Preprocessing Resample to 22050Hz
+python resample.py --audio_dir=abd001 --output_dir=abd001-resample --target_sr=22050
+
+#Preprocessing Resample to 22050Hz Multiple Folder
+python multiple_folder_resample.py --audio_dir=/home/sysadm/Ilham/GST-TTS/STT-Dataset/dataset_vad_denoiser --output_dir=/home/sysadm/Ilham/GST-TTS/STT-Dataset/dataset_22050 --target_sr=22050
+
+#Preprocessing Resample to 22050Hz Multiple Folder
+python multiple_folder_resample.py --audio_dir=/home/sysadm/Ilham/GST-TTS/STT-Dataset/dataset_vad_denoiser --output_dir=/home/sysadm/Ilham/GST-TTS/STT-Dataset/dataset_22050 --target_sr=22050
+
+
+cp /home/sysadm/Ilham/GST-TTS/STT-Dataset/abd001/transcript.csv /home/sysadm/Ilham/GST-TTS/STT-Dataset/dataset_22050
+
+#Dataset Genetaor
+python dataset_generator.py --input_dir=input_dir --output_dir=output_dir

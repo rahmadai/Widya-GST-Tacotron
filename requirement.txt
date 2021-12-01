@@ -1,0 +1,4 @@
+denoiser
+soundfile
+pyannote.audio==1.1.1
+audio-metadata
